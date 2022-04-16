@@ -1,0 +1,12 @@
+const router = require("express").Router();
+
+// GET /api/notes should read the db.json file and return all saved notes as JSON
+// POST /api/notes should receive a new note to save on the request body,
+// add it to the db.json file, and then return the new note to the client.
+// each note needs a unique id when its saved.  NPM called "uuid"
+
+// DELETE /api/notes/:id should receive a query parameter containing the id of a note to delete.
+// To delete, read all notes from db.json file, remove note with the id property, and rewrite notes to db.json file.
+// There has to be an easier way for that ^
+
+module.exports = router;
