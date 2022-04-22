@@ -20,6 +20,22 @@ class Store {
       return parsedNotes;
     });
   }
+  addNote(note) {
+    //   check if data has title text properties and if empty
+    if (!note.title || !note.text) {
+      throw new Error("Empty data");
+    }
+    return this.getAllNotes()
+      .then((notes) => {
+        return [...notes, note];
+      })
+      .then((newNoteArray) => {
+        return this.write(newNoteArray);
+      })
+      .then(() => {
+        return note;
+      });
+  }
 }
 
 module.exports = new Store();

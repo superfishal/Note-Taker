@@ -10,7 +10,16 @@ router.get("/notes", function (req, res) {
       return res.status(500).json(err);
     });
 });
-// GET /api/notes should read the db.json file and return all saved notes as JSON
+router.post("/notes", function (req, res) {
+  store
+    .addNote(req.body)
+    .then((note) => {
+      return res.json(note);
+    })
+    .catch((err) => {
+      return res.status(500).json(err);
+    });
+});
 // POST /api/notes should receive a new note to save on the request body,
 // add it to the db.json file, and then return the new note to the client.
 // each note needs a unique id when its saved.  NPM called "uuid"
