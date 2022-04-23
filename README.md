@@ -19,7 +19,7 @@ Clone the repository from Github. Initialize npm and ensure express and uuid are
 
 ### Usage Instructions:
 
-To run the application, open the integrated terminal and type node server.js to start the server. Navigate to !weblink to see the live application.
+To use the application, navigate to the [Deployed Heroku Link](https://superfishal-note-taker.herokuapp.com/) in your browser!
 
 ### Contributor Guidelines:
 
@@ -35,4 +35,8 @@ N/A
 
 Check out my **[Github](https://github.com/superfishal/Note-Taker)**
 
-### Walkthrough
+### Walkthrough / Screenshots
+
+![Deployed Main Page](./public/assets/images/Screen%20Shot%202022-04-23%20at%2012.10.48.png)
+
+![Deployed Notes Page](./public/assets/images/Screen%20Shot%202022-04-23%20at%2012.11.50.png)
