@@ -1,5 +1,7 @@
+// this file intearacts with the db store.js functions and api
 const router = require("express").Router();
 const store = require("../../db/store");
+
 router.get("/notes", function (req, res) {
   store
     .getAllNotes()
@@ -31,8 +33,5 @@ router.delete("/notes/:id", function (req, res) {
       return res.status(500).json(err);
     });
 });
-// DELETE /api/notes/:id should receive a query parameter containing the id of a note to delete.
-// To delete, read all notes from db.json file, remove note with the id property, and rewrite notes to db.json file.
-// There has to be an easier way for that ^
 
 module.exports = router;

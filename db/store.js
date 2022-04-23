@@ -1,8 +1,11 @@
+// this file contains all the storage functions for writing/receiving/saving
 const fs = require("fs");
 const util = require("util");
 const uuid = require("uuid");
+// asynchronous read/write file returns promise
 const readFileAsync = util.promisify(fs.readFile);
 const writeFileAsync = util.promisify(fs.writeFile);
+// storage class for read/write/get/add/delete note using unique uuid
 class Store {
   read() {
     return readFileAsync("db/db.json", "utf8");
@@ -26,6 +29,7 @@ class Store {
     if (!note.title || !note.text) {
       throw new Error("Empty data");
     }
+    // unique id
     note.id = uuid.v4();
     return this.getAllNotes()
       .then((notes) => {
